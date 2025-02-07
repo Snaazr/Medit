@@ -23,6 +23,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import StackNavigator from './navigation/StackNavigator';
 
 function Section({children, title}){
   const isDarkMode = useColorScheme() === 'dark';
@@ -58,17 +59,7 @@ function App() {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-      </ScrollView>
-    </SafeAreaView>
+  <StackNavigator />
   );
 }
 
